@@ -55,7 +55,7 @@ open class SKRadioButton: UIButton {
     iconSecondInnerView?.backgroundColor = UIColor.white
     iconThirdInnerView?.backgroundColor = iconColor
     let iconFrame = CGRect(x: 0.0, y: Double(center.y - iconView!.frame.height/2.0), width: iconSize, height: iconSize)
-    iconView?.frame =
+    iconView?.frame = iconFrame
     iconThirdInnerView?.isHidden = !isChecked
     let x = Double(iconView!.frame.size.width) + marginWidth
     let rect = CGRect(x: x, y: 0.0, width: Double(frame.size.width)-x, height: Double(frame.size.height))
