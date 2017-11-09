@@ -1,3 +1,9 @@
 language: swift
 xcode_project: SKRadioButton.xcodeproj # path to your xcodeproj folder
 xcode_scheme: SKRadioButonTests
+
+os: osx
+before_install:
+- brew install git-lfs
+before_script:
+- git lfs pull
