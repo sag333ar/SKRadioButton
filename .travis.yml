@@ -1,25 +1,18 @@
 language: swift
+osx_image: xcode9
 
 branches:
  only:
  - master
 
-xcode_project: SKRadioButton.xcodeproj # path to your xcodeproj folder
-xcode_scheme: SKRadioButton
-
-osx_image: xcode9
-xcode_sdk: iphonesimulator11.1
+ env:
+  - LC_CTYPE=en_US.UTF-8 LANG=en_US.UTF-8
 
 before_install:
-    - gem install specific_install
-    - gem specific_install -l https://github.com/venmo/slather.git
-    - export IOS_SIMULATOR_UDID=$(instruments -s devices | grep "$ios_device ($ios_version)" | sed -E 's/.*\[([0-9A-F-]+)\].*/\1/g')
-    - echo "Prelaunching iOS simulator $IOS_SIMULATOR_UDID"
-    - open -a "simulator" --args -CurrentDeviceUDID $IOS_SIMULATOR_UDID
+    - brew update
+    - brew install swiftlint || true
 
 script:
-  - xcodebuild clean build test -project SKRadioButton.xcodeproj -scheme SKRadioButton -destination 'platform=iOS Simulator,name=iPhone 6' GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES
+  - set -o pipefail
+  - xcodebuild -project SKRadioButton.xcodeproj -scheme SKRadioButton -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty -c
   - swiftlint
-
-after_success:
-  - cd $TRAVIS_BUILD_DIR && slather
