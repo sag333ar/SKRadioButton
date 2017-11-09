@@ -9,13 +9,28 @@
 /* Begin PBXBuildFile section */
 		319F29F11FB4791E0059B2F9 /* SKRadioButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 319F29EF1FB4791E0059B2F9 /* SKRadioButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		319F29F81FB479410059B2F9 /* SKRadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319F29F71FB479410059B2F9 /* SKRadioButton.swift */; };
+		319F2A241FB487B70059B2F9 /* SKRadioButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319F2A231FB487B70059B2F9 /* SKRadioButtonTests.swift */; };
+		319F2A261FB487B70059B2F9 /* SKRadioButton.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 319F29EC1FB4791E0059B2F9 /* SKRadioButton.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		319F2A271FB487B70059B2F9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 319F29E31FB4791E0059B2F9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 319F29EB1FB4791E0059B2F9;
+			remoteInfo = SKRadioButton;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		319F29EC1FB4791E0059B2F9 /* SKRadioButton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SKRadioButton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		319F29EF1FB4791E0059B2F9 /* SKRadioButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKRadioButton.h; sourceTree = "<group>"; };
 		319F29F01FB4791E0059B2F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		319F29F71FB479410059B2F9 /* SKRadioButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKRadioButton.swift; sourceTree = "<group>"; };
+		319F2A211FB487B70059B2F9 /* SKRadioButtonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SKRadioButtonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		319F2A231FB487B70059B2F9 /* SKRadioButtonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKRadioButtonTests.swift; sourceTree = "<group>"; };
+		319F2A251FB487B70059B2F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +41,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		319F2A1E1FB487B70059B2F9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				319F2A261FB487B70059B2F9 /* SKRadioButton.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -33,6 +56,7 @@
 			isa = PBXGroup;
 			children = (
 				319F29EE1FB4791E0059B2F9 /* SKRadioButton */,
+				319F2A221FB487B70059B2F9 /* SKRadioButtonTests */,
 				319F29ED1FB4791E0059B2F9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				319F29EC1FB4791E0059B2F9 /* SKRadioButton.framework */,
+				319F2A211FB487B70059B2F9 /* SKRadioButtonTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -53,6 +78,15 @@
 				319F29F01FB4791E0059B2F9 /* Info.plist */,
 			);
 			path = SKRadioButton;
+			sourceTree = "<group>";
+		};
+		319F2A221FB487B70059B2F9 /* SKRadioButtonTests */ = {
+			isa = PBXGroup;
+			children = (
+				319F2A231FB487B70059B2F9 /* SKRadioButtonTests.swift */,
+				319F2A251FB487B70059B2F9 /* Info.plist */,
+			);
+			path = SKRadioButtonTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -87,16 +121,39 @@
 			productReference = 319F29EC1FB4791E0059B2F9 /* SKRadioButton.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		319F2A201FB487B70059B2F9 /* SKRadioButtonTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 319F2A2B1FB487B70059B2F9 /* Build configuration list for PBXNativeTarget "SKRadioButtonTests" */;
+			buildPhases = (
+				319F2A1D1FB487B70059B2F9 /* Sources */,
+				319F2A1E1FB487B70059B2F9 /* Frameworks */,
+				319F2A1F1FB487B70059B2F9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				319F2A281FB487B70059B2F9 /* PBXTargetDependency */,
+			);
+			name = SKRadioButtonTests;
+			productName = SKRadioButtonTests;
+			productReference = 319F2A211FB487B70059B2F9 /* SKRadioButtonTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		319F29E31FB4791E0059B2F9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0900;
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Kothari, Sagar";
 				TargetAttributes = {
 					319F29EB1FB4791E0059B2F9 = {
+						CreatedOnToolsVersion = 9.0.1;
+						ProvisioningStyle = Automatic;
+					};
+					319F2A201FB487B70059B2F9 = {
 						CreatedOnToolsVersion = 9.0.1;
 						ProvisioningStyle = Automatic;
 					};
@@ -115,12 +172,20 @@
 			projectRoot = "";
 			targets = (
 				319F29EB1FB4791E0059B2F9 /* SKRadioButton */,
+				319F2A201FB487B70059B2F9 /* SKRadioButtonTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		319F29EA1FB4791E0059B2F9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		319F2A1F1FB487B70059B2F9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -138,7 +203,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		319F2A1D1FB487B70059B2F9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				319F2A241FB487B70059B2F9 /* SKRadioButtonTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		319F2A281FB487B70059B2F9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 319F29EB1FB4791E0059B2F9 /* SKRadioButton */;
+			targetProxy = 319F2A271FB487B70059B2F9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		319F29F21FB4791E0059B2F9 /* Debug */ = {
@@ -294,6 +375,32 @@
 			};
 			name = Release;
 		};
+		319F2A291FB487B70059B2F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = SKRadioButtonTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sagarkothari.SKRadioButtonTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		319F2A2A1FB487B70059B2F9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = SKRadioButtonTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sagarkothari.SKRadioButtonTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -311,6 +418,15 @@
 			buildConfigurations = (
 				319F29F51FB4791E0059B2F9 /* Debug */,
 				319F29F61FB4791E0059B2F9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		319F2A2B1FB487B70059B2F9 /* Build configuration list for PBXNativeTarget "SKRadioButtonTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				319F2A291FB487B70059B2F9 /* Debug */,
+				319F2A2A1FB487B70059B2F9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
