@@ -10,7 +10,7 @@ import UIKit
 
 @IBDesignable
 open class SKRadioButton: UIButton {
-  
+
   private var iconView: UIView?
   private var iconSecondInnerView: UIView?
   private var iconThirdInnerView: UIView?
@@ -21,7 +21,7 @@ open class SKRadioButton: UIButton {
   @IBInspectable public var marginWidth: Double = 10
   @IBInspectable public var iconSize: Double = 30
   @IBInspectable public var titleText: String = "Sagar"
-  
+
   override open var isSelected: Bool {
     didSet {
       isChecked = isSelected
@@ -31,7 +31,8 @@ open class SKRadioButton: UIButton {
 
   override open func draw(_ rect: CGRect) {
     if iconView == nil {
-      iconView = UIView(frame: CGRect(x: 0.0, y: self.frame.origin.y/2.0, width: CGFloat(iconSize), height: CGFloat(iconSize)))
+      let rect = CGRect(x: 0.0, y: self.frame.origin.y/2.0, width: CGFloat(iconSize), height: CGFloat(iconSize))
+      iconView = UIView(frame: rect)
       iconView?.clipsToBounds = true
       iconSecondInnerView = UIView(frame: CGRect(x: 0, y: 0, width: iconSize/1.25, height: iconSize/1.25))
       iconSecondInnerView?.clipsToBounds = true
@@ -44,7 +45,8 @@ open class SKRadioButton: UIButton {
       iconSecondInnerView?.layer.cornerRadius = iconSecondInnerView!.frame.size.width / 2 - 1
       iconThirdInnerView?.layer.cornerRadius = iconThirdInnerView!.frame.size.width / 2 - 1
       let x = Double(iconView!.frame.size.width) + marginWidth
-      textLabel = UILabel(frame: CGRect(x: x, y: 0.0, width: Double(frame.size.width)-x, height: Double(frame.size.height)))
+      let labelRect = CGRect(x: x, y: 0.0, width: Double(frame.size.width)-x, height: Double(frame.size.height))
+      textLabel = UILabel(frame: labelRect)
       self.addSubview(textLabel!)
     }
     iconSecondInnerView?.center = iconView!.center
@@ -52,12 +54,13 @@ open class SKRadioButton: UIButton {
     iconView?.backgroundColor = iconColor
     iconSecondInnerView?.backgroundColor = UIColor.white
     iconThirdInnerView?.backgroundColor = iconColor
-    iconView?.frame = CGRect(x: 0.0, y: Double(center.y - iconView!.frame.height/2.0), width: iconSize, height: iconSize)
+    let iconFrame = CGRect(x: 0.0, y: Double(center.y - iconView!.frame.height/2.0), width: iconSize, height: iconSize)
+    iconView?.frame =
     iconThirdInnerView?.isHidden = !isChecked
     let x = Double(iconView!.frame.size.width) + marginWidth
     let rect = CGRect(x: x, y: 0.0, width: Double(frame.size.width)-x, height: Double(frame.size.height))
     textLabel?.frame = rect
     textLabel?.text = titleText
    }
-  
+
 }
