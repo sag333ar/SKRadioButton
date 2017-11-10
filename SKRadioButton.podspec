@@ -29,7 +29,7 @@ Pod::Spec.new do |s|
   Insert button, change class & you're done.
                    DESC
 
-  s.homepage     = "http://sagarrkothari.com"
+  s.homepage     = "https://cocoapods.org/pods/SKRadioButton"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -56,6 +56,7 @@ Pod::Spec.new do |s|
 
   s.author             = { "Sagar Kothari" => "sag333ar@gmail.com" }
   s.social_media_url   = "http://twitter.com/sag333ar"
+  s.social_media_url   = "http://sagarrkothari.com"
 
   # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
