@@ -21,6 +21,11 @@ open class SKRadioButton: UIButton {
   @IBInspectable public var marginWidth: Double = 10
   @IBInspectable public var iconSize: Double = 30
   @IBInspectable public var titleText: String = "Sagar"
+  @IBInspectable public var numberOfLines: Int = 0 {
+    didSet {
+      textLabel?.numberOfLines = numberOfLines
+    }
+  }
   @IBInspectable public var titleTextColor: UIColor = UIColor.black {
     didSet {
       textLabel?.textColor = titleTextColor
@@ -86,6 +91,7 @@ open class SKRadioButton: UIButton {
     textLabel?.text = titleText
     textLabel?.textColor = titleTextColor
     textLabel?.backgroundColor = titleTextBackgroundColor
+    textLabel?.numberOfLines = numberOfLines
    }
   
 }

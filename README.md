@@ -24,6 +24,7 @@ With the help of these custom buttons, Radio button funcationality can be achiev
 - [x] Change Icon size
 - [x] Change Title Label Color
 - [x] Change Title Label Background Color
+- [x] Change number of lines for Title Label
 
 ## Requirements
 
