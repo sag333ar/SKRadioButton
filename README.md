@@ -6,14 +6,12 @@
 [![Pod Platform](https://img.shields.io/cocoapods/p/SKRadioButton.svg?style=flat)](https://cocoapods.org/pods/SKRadioButton)
 [![Pod License](https://img.shields.io/cocoapods/l/SKRadioButton.svg?style=flat)](https://github.com/sag333ar/SKRadioButton/blob/master/LICENSE)
 [![Pod Version](https://img.shields.io/cocoapods/v/SKRadioButton.svg?style=flat)](https://cocoapods.org/pods/SKRadioButton)
-![CocoaPods](https://img.shields.io/cocoapods/at/SKRadioButton.svg)
-![CocoaPods](https://img.shields.io/cocoapods/p/SKRadioButton.svg)
-![CocoaPods](https://img.shields.io/cocoapods/metrics/doc-percent/SKRadioButton.svg)
 ![Readme Score](http://readme-score-api.herokuapp.com/score.svg?url=https://github.com/sag333ar/skradiobutton)
 
 ## Sample Screenshot
 
 ![Demo](https://raw.githubusercontent.com/sag333ar/SKRadioButton/master/ReadmeAssets/GifDemo.gif)
+
 ![ScreenShot](https://raw.githubusercontent.com/sag333ar/SKRadioButton/master/ReadmeAssets/SampleImage.png)
 
 With the help of these custom buttons, Radio button funcationality can be achieved easily.
@@ -58,22 +56,29 @@ import SKRadioButton
 ## Usage example
 
 ***Step 1:*** Open `Storyboard`, Drag and drop a `UIButton` inside your view of `ViewController`.
+
 ![Drag & Drop Button](https://raw.githubusercontent.com/sag333ar/SKRadioButton/master/ReadmeAssets/Step1.png)
 
 ***Step 2:*** Change the `Class` and `Module` from `Class inspector` for `UIbutton`s which you want to convert to Radio button.
+
 ![Change Class](https://raw.githubusercontent.com/sag333ar/SKRadioButton/master/ReadmeAssets/Step2.png)
 
 ***Step 3:*** Select your buttons, Change `Type` to `Custom`, remove button `Title` + `Image` + `Background`. Apply Radio buttons customization.
+
 ![Change Attributes](https://raw.githubusercontent.com/sag333ar/SKRadioButton/master/ReadmeAssets/Step3-1.png)
+
 ![Change Attributes2](https://raw.githubusercontent.com/sag333ar/SKRadioButton/master/ReadmeAssets/Step3-2.png)
 
 ***Step 4:*** Place your Radio buttons inside a stack view (recommended) & apply necessary constraints as per your needs.
+
 ![Use Stackview](https://raw.githubusercontent.com/sag333ar/SKRadioButton/master/ReadmeAssets/Step4.png)
 
 ***Step 5:*** One by one, select your Radio buttons & connect with `Outlet Collection` to your `viewController` as indicated below.
+
 ![Outlet Collection](https://raw.githubusercontent.com/sag333ar/SKRadioButton/master/ReadmeAssets/Step5.png)
 
 ***Step 6:*** One by one, select your Radio buttons & connect same `Action` to your `viewController`s `IBAction` as indicated below.
+
 ![IBAction Connection](https://raw.githubusercontent.com/sag333ar/SKRadioButton/master/ReadmeAssets/Step6.png)
 
 ***Step 7:*** Add following piece of code & you're done.
@@ -106,7 +111,6 @@ class ViewController: UIViewController {
 ## Contribute
 
 We would love you for the contribution to **SKRadioButton**, check the ``LICENSE`` file for more info.
-
 
 ## Meta
 
