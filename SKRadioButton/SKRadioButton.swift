@@ -10,7 +10,7 @@ import UIKit
 
 @IBDesignable
 open class SKRadioButton: UIButton {
-
+  
   private var iconView: UIView?
   private var iconSecondInnerView: UIView?
   private var iconThirdInnerView: UIView?
@@ -21,7 +21,18 @@ open class SKRadioButton: UIButton {
   @IBInspectable public var marginWidth: Double = 10
   @IBInspectable public var iconSize: Double = 30
   @IBInspectable public var titleText: String = "Sagar"
+  @IBInspectable public var titleTextColor: UIColor = UIColor.black {
+    didSet {
+      textLabel?.textColor = titleTextColor
+    }
+  }
 
+  @IBInspectable public var titleTextBackgroundColor: UIColor = UIColor.white {
+    didSet {
+      textLabel?.backgroundColor = titleTextBackgroundColor
+    }
+  }
+  
   override open var isSelected: Bool {
     didSet {
       isChecked = isSelected
@@ -31,36 +42,50 @@ open class SKRadioButton: UIButton {
 
   override open func draw(_ rect: CGRect) {
     if iconView == nil {
-      let rect = CGRect(x: 0.0, y: self.frame.origin.y/2.0, width: CGFloat(iconSize), height: CGFloat(iconSize))
-      iconView = UIView(frame: rect)
+      iconView = UIView(frame: CGRect(x: 0.0, y: self.frame.origin.y/2.0, width: CGFloat(iconSize), height: CGFloat(iconSize)))
       iconView?.clipsToBounds = true
-      iconSecondInnerView = UIView(frame: CGRect(x: 0, y: 0, width: iconSize/1.25, height: iconSize/1.25))
+      iconSecondInnerView = UIView(frame: CGRect(x: 0, y: 0, width: iconSize*0.8, height: iconSize*0.8))
       iconSecondInnerView?.clipsToBounds = true
-      iconThirdInnerView = UIView(frame: CGRect(x: 0, y: 0, width: iconSize/2.5, height: iconSize/2.5))
+      iconThirdInnerView = UIView(frame: CGRect(x: 0, y: 0, width: iconSize*0.5, height: iconSize*0.5))
       iconThirdInnerView?.clipsToBounds = true
-      iconView?.addSubview(iconSecondInnerView!)
-      iconView?.addSubview(iconThirdInnerView!)
       self.addSubview(iconView!)
+      self.addSubview(iconSecondInnerView!)
+      self.addSubview(iconThirdInnerView!)
       iconView?.layer.cornerRadius = iconView!.frame.size.width / 2 - 1
       iconSecondInnerView?.layer.cornerRadius = iconSecondInnerView!.frame.size.width / 2 - 1
       iconThirdInnerView?.layer.cornerRadius = iconThirdInnerView!.frame.size.width / 2 - 1
       let x = Double(iconView!.frame.size.width) + marginWidth
-      let labelRect = CGRect(x: x, y: 0.0, width: Double(frame.size.width)-x, height: Double(frame.size.height))
-      textLabel = UILabel(frame: labelRect)
+      textLabel = UILabel(frame: CGRect(x: x, y: 0.0, width: Double(frame.size.width)-x, height: Double(frame.size.height)))
       self.addSubview(textLabel!)
+      iconView?.isUserInteractionEnabled = false
+      iconSecondInnerView?.isUserInteractionEnabled = false
+      iconThirdInnerView?.isUserInteractionEnabled = false
+      textLabel?.isUserInteractionEnabled = false
     }
-    iconSecondInnerView?.center = iconView!.center
-    iconThirdInnerView?.center = iconSecondInnerView!.center
+    // Apply colors
     iconView?.backgroundColor = iconColor
     iconSecondInnerView?.backgroundColor = UIColor.white
     iconThirdInnerView?.backgroundColor = iconColor
-    let iconFrame = CGRect(x: 0.0, y: Double(center.y - iconView!.frame.height/2.0), width: iconSize, height: iconSize)
-    iconView?.frame = iconFrame
+
+    // If selected show center view, else hide.
     iconThirdInnerView?.isHidden = !isChecked
+
+    // update center frame
+    iconView?.frame = CGRect(x: 0.0, y: Double(center.y - iconView!.frame.height/2.0), width: iconSize, height: iconSize)
+
+    // Set position for second inner circle
+    iconSecondInnerView?.center = iconView!.center
+
+    // Set position for third inner circle
+    iconThirdInnerView?.center = iconView!.center
+    
+    // Set position for text label
     let x = Double(iconView!.frame.size.width) + marginWidth
     let rect = CGRect(x: x, y: 0.0, width: Double(frame.size.width)-x, height: Double(frame.size.height))
     textLabel?.frame = rect
     textLabel?.text = titleText
+    textLabel?.textColor = titleTextColor
+    textLabel?.backgroundColor = titleTextBackgroundColor
    }
-
+  
 }
